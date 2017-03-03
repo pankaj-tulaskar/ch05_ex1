@@ -20,8 +20,17 @@
     </table>
 
     <h2>Add Category</h2>
-    <!-- add code for form here -->
+    
+    <form action="add_category.php" method="post"
+              id="add_categoty_form">
 
+            <label>Name:</label>
+            <input type="text" name="name"><br>
+            
+            <label>&nbsp;</label><br>
+            <input type="submit" value="Add Category"><br>
+        </form>
+<br>
     <p><a href="index.php?action=list_products">List Products</a></p>
 
 </main>
