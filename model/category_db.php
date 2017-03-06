@@ -21,7 +21,7 @@ function get_category_name($category_id) {
     return $category_name;
 }
 
-function add_category()  {
+function add_category($name)  {
     global $db;
     $query = 'INSERT INTO categories_guitar1
                  (categoryName)
@@ -33,13 +33,13 @@ function add_category()  {
     $statement->closeCursor();
 }
 
-function delete_category()  {
+function delete_category($category_id)  {
     global $db;
     $query = 'DELETE FROM categories_guitar1
-              WHERE categoryID = :name';
+              WHERE categoryID = :category_id ';
     $statement = $db->prepare($query);
-    $statement->bindValue(':name', $categoryID);
-    $success = $statement->execute();
+    $statement->bindValue(':category_id', $category_id);
+    $statement->execute();
     $statement->closeCursor();
 }
 ?>
